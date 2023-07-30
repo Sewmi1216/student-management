@@ -6,7 +6,18 @@ const studentController = require("../controllers/StudentController");
 router.route('/display')
     .get(studentController.getAllStudents);
 
-module.exports = router;
+router.route('/add')
+    .post(studentController.addStudent);
+
+router.route('/getStudent/:id')
+    .get(studentController.getStudent);
+
+router.route('/update/:id')
+    .put(studentController.updateStudent);
+router.route('/delete/:id')
+    .delete(studentController.deleteStudent);
+
+
 
 // router.get("/",controller.get);
 
@@ -80,3 +91,4 @@ module.exports = router;
 
 
 
+module.exports = router;
